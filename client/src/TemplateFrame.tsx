@@ -47,9 +47,11 @@ export default function TemplateFrame({
     toggleColorMode,
     children,
 }: TemplateFrameProps) {
+
     const handleChange = (event: SelectChangeEvent) => {
         toggleCustomTheme(event.target.value === 'custom');
     };
+
     const blogTheme = createTheme(getBlogTheme(mode));
 
     return (
