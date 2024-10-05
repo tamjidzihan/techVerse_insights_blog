@@ -9,12 +9,10 @@ import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid2';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
-import InputAdornment from '@mui/material/InputAdornment';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import { styled } from '@mui/material/styles';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
+import { Search } from './Search';
 
 const cardData = [
     {
@@ -143,26 +141,6 @@ function Author({ authors }: { authors: { name: string; avatar: string }[] }) {
     );
 }
 
-export function Search() {
-    return (
-        <FormControl sx={{ width: { xs: '100%', md: '25ch' } }} variant="outlined">
-            <OutlinedInput
-                size="small"
-                id="search"
-                placeholder="Search…"
-                sx={{ flexGrow: 1 }}
-                startAdornment={
-                    <InputAdornment position="start" sx={{ color: 'text.primary' }}>
-                        <SearchRoundedIcon fontSize="small" />
-                    </InputAdornment>
-                }
-                inputProps={{
-                    'aria-label': 'search',
-                }}
-            />
-        </FormControl>
-    );
-}
 
 export default function MainContent() {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
@@ -270,9 +248,6 @@ export default function MainContent() {
                     }}
                 >
                     <Search />
-                    <IconButton size="small" aria-label="RSS feed">
-                        <RssFeedRoundedIcon />
-                    </IconButton>
                 </Box>
             </Box>
             <Grid container spacing={2} columns={12}>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { alpha, styled } from '@mui/material/styles';
+import { alpha, styled, PaletteMode } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +11,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import Sitemark from './SitemarkIcon';
+import Sitemark from './TechVerseIcon';
+import ToggleColorMode from './ToggleColorMode';
+
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -27,7 +29,15 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     padding: '8px 12px',
 }));
 
-export default function AppAppBar() {
+
+interface AppAppBarProps {
+    mode: PaletteMode;
+    toggleColorMode: () => void;
+}
+
+
+
+export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
@@ -37,7 +47,7 @@ export default function AppAppBar() {
     return (
         <AppBar
             position="fixed"
-            sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 10 }}
+            sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 3 }}
         >
             <Container maxWidth="lg">
                 <StyledToolbar variant="dense" disableGutters>
@@ -77,6 +87,11 @@ export default function AppAppBar() {
                         <Button color="primary" variant="contained" size="small">
                             Sign up
                         </Button>
+                        <ToggleColorMode
+                            data-screenshot="toggle-mode"
+                            mode={mode}
+                            toggleColorMode={toggleColorMode}
+                        />
                     </Box>
                     <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
                         <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -102,6 +117,13 @@ export default function AppAppBar() {
                                 <MenuItem>Pricing</MenuItem>
                                 <MenuItem>FAQ</MenuItem>
                                 <MenuItem>Blog</MenuItem>
+                                <MenuItem>
+                                    <ToggleColorMode
+                                        data-screenshot="toggle-mode"
+                                        mode={mode}
+                                        toggleColorMode={toggleColorMode}
+                                    />
+                                </MenuItem>
                                 <MenuItem>
                                     <Button color="primary" variant="contained" fullWidth>
                                         Sign up

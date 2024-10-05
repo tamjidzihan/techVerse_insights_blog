@@ -8,7 +8,6 @@ import {
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -56,7 +55,7 @@ export default function TemplateFrame({
 
     return (
         <ThemeProvider theme={blogTheme}>
-            <Box sx={{ height: '100dvh', display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ height: '100dvh', display: { sm: 'flex', md: 'none' }, flexDirection: 'column' }}>
                 <StyledAppBar>
                     <Toolbar
                         variant="dense"
@@ -68,17 +67,7 @@ export default function TemplateFrame({
                             p: '8px 12px',
                         }}
                     >
-                        <Button
-                            variant="text"
-                            size="small"
-                            aria-label="Back to templates"
-                            startIcon={<ArrowBackRoundedIcon />}
-                            component="a"
-                            href="/material-ui/getting-started/templates/"
-                            sx={{ display: { xs: 'none', sm: 'flex' } }}
-                        >
-                            Back to templates
-                        </Button>
+
                         <IconButton
                             size="small"
                             aria-label="Back to templates"

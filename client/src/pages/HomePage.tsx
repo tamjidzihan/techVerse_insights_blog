@@ -1,10 +1,12 @@
-import React from 'react'
+import Latest from '../components/Latest'
+import MainContent from '../components/MainContent'
 
 const HomePage = () => {
     return (
-        <div>
-            Test HomePage
-        </div>
+        <>
+            <MainContent />
+            <Latest />
+        </>
     )
 }
 
