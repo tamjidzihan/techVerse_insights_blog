@@ -1,5 +1,5 @@
-import Latest from '../components/Latest'
-import MainContent from '../components/MainContent'
+import Latest from '../components/Home/Latest'
+import MainContent from '../components/Home/MainContent'
 
 const HomePage = () => {
     return (

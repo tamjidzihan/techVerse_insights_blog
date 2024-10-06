@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import { Search } from './Search';
+import { Search } from '../Search';
 
 const cardData = [
     {

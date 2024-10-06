@@ -11,8 +11,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import Sitemark from './TechVerseIcon';
+import TechVerseIcon from './CustomIcon/TechVerseIcon';
 import ToggleColorMode from './ToggleColorMode';
+import { Link } from 'react-router-dom';
 
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -51,8 +52,10 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         >
             <Container maxWidth="lg">
                 <StyledToolbar variant="dense" disableGutters>
-                    <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-                        <Sitemark />
+                    <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', px: 0 }}>
+                        <Link to={"/"}>
+                            <TechVerseIcon />
+                        </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Button variant="text" color="info" size="small">
                                 Features
@@ -81,9 +84,11 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                             alignItems: 'center',
                         }}
                     >
-                        <Button color="primary" variant="text" size="small">
-                            Sign in
-                        </Button>
+                        <Link to={'auth/login'}>
+                            <Button color="primary" variant="text" size="small">
+                                Sign in
+                            </Button>
+                        </Link>
                         <Button color="primary" variant="contained" size="small">
                             Sign up
                         </Button>
