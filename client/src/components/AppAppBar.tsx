@@ -53,7 +53,7 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
             <Container maxWidth="lg">
                 <StyledToolbar variant="dense" disableGutters>
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', px: 0 }}>
-                        <Link to={"/"}>
+                        <Link to={"/"} style={{ textDecoration: 'none' }}>
                             <TechVerseIcon />
                         </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
