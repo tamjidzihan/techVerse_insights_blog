@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
@@ -15,7 +15,7 @@ import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
 import TechVerseIcon from '../CustomIcon/TechVerseIcon';
-import AppTheme from '../../theme/AppTheme';
+// import AppTheme from '../../theme/AppTheme';
 import { GoogleIcon } from '../CustomIcon/GoogleIcon';
 import { FacebookIcon } from '../CustomIcon/FacebookIcon';
 
@@ -60,7 +60,7 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
     },
 }));
 
-export default function SignIn(props: { disableCustomTheme?: boolean }) {
+export default function SignIn() {
     const [emailError, setEmailError] = React.useState(false);
     const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
     const [passwordError, setPasswordError] = React.useState(false);
@@ -115,8 +115,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
     };
 
     return (
-        <AppTheme {...props}>
-            <CssBaseline enableColorScheme />
+        <>
             <SignInContainer direction="column" justifyContent="space-between">
 
                 <Card variant="outlined">
@@ -231,6 +230,6 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                     </Box>
                 </Card>
             </SignInContainer>
-        </AppTheme>
+        </>
     );
 }
