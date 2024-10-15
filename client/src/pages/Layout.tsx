@@ -66,19 +66,19 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { Outlet } from 'react-router-dom';
-import AppAppBar from '../components/AppAppBar';
+// import AppAppBar from '../components/AppAppBar';
 import Footer from '../components/Footer';
 import getBlogTheme from '../theme/getBlogTheme';
-import { useThemeContext } from '../context/ThemeContext'; // Import the custom hook
+// import { useThemeContext } from '../context/ThemeContext'; 
 
 const Layout = () => {
-    const { mode, toggleColorMode } = useThemeContext(); // Access theme mode and toggle function
+    // const { mode, toggleColorMode } = useThemeContext(); // Access theme mode and toggle function
 
     return (
-        <ThemeProvider theme={getBlogTheme(mode)}>
+        <ThemeProvider theme={getBlogTheme("dark")}>
             <CssBaseline enableColorScheme />
 
-            <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
+            {/* <AppAppBar mode={mode} toggleColorMode={toggleColorMode} /> */}
 
             <Container
                 maxWidth="lg"
